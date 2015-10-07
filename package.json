@@ -1,0 +1,17 @@
+{
+    "name": "gossip-tweet",
+    "main": "server.js",
+    "dependencies": {
+        "express": "~4.5.1",
+        "express-session": "~1.11.3",
+        "mongoose": "~3.8.0",
+        "body-parser": "~1.4.2",
+        "method-override": "~2.0.2",
+        "node-twitter-api": "1.6.0",
+        "mapred": "0.1.0"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "postinstall": "bower install"
+    }
+}

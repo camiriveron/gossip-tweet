@@ -1,0 +1,31 @@
+<div ng-controller="HomeController as hc">
+    <div id="mainArea">
+        <div class="header">
+            <div class="intro-text">
+                <div class="intro-lead-in">Let's gossip!</div>
+                <div class="intro-heading">What's people tweeting about?</div>
+                <div class="desc-heading">Find out the trending topics in your area!</div>
+                <a href="#hashtags" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+        <div id="hashtags" class="about content-section text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="col-lg-8 col-lg-offset-2 gossiptweet__hashtagList__headline">Here you can gossip about what people is talking about and where!</span>
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <ul class="list-group gossiptweet__hashtagList">
+                            <li ng-repeat="hashtag in hc.hashtags" class="list-group-item gossiptweet__hashtagList__item">
+                                <a href="" ng-class="{'gossiptweet__hashtagList__link--selected': hashtag.selected}" class="gossiptweet__hashtagList__link" ng-click="hc.showTweets(hashtag)">
+                                    #{{hashtag.text}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'/components/map/map.view.html'"></div>
+</div>

@@ -1,0 +1,27 @@
+<div id="mapArea" class="sidemap " ng-controller="mapController as mc">
+    <div id="shadow" class="mapShadow"></div>
+    <ui-gmap-google-map center='mc.map.center' zoom='mc.map.zoom' options="mc.map.options" events="mc.map.events">
+        <ui-gmap-markers models="mc.map.tweetsMarkers" events="mc.map.tweetsMarkers.events" coords="'geo'" idkey="'id'" icon="'icon'" click="'onClickMarker'">
+            <ui-gmap-windows show="'show'">
+                <div class="tweetWindow" ng-non-bindable>
+                    <div class="row gossiptweet__row">
+                        <div class="gossiptweet__tweetImage">
+                            <img src="{{profile_image}}"></img>
+                        </div>
+                        <div class="col-md-9 gossiptweet__userInfo">
+                            <span class="gossiptweet__userInfo__userName">{{user_name}}</span>
+                            </br>
+                            <a href="http://twitter.com/{{user_screen_name}}" target="_blank">@{{user_screen_name}}</a>
+                        </div>
+                    </div>
+                    <div class="row gossiptweet__row">
+                        <div class="col-md-12">{{text}}</div>
+                    </div>
+                    <div class="row gossiptweet__row gossiptweet__date">
+                        <div class="col-md-5">{{date}}</div>
+                    </div>
+                </div>
+            </ui-gmap-windows>
+        </ui-gmap-markers>
+    </ui-gmap-google-map>
+</div>

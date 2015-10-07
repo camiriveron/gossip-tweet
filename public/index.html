@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gossip Tweet</title>
+
+    <!-- Libraries -->
+    <script src="assets/libs/underscore/underscore-min.js"></script>
+    <script src='assets/libs/lodash/dist/lodash.min.js'></script>
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/angular-resource/angular-resource.min.js"></script>
+    <script src='assets/libs/angular-simple-logger/dist/index.js'></script>
+    <script src="assets/libs/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src='assets/libs/angular-google-maps/dist/angular-google-maps.js'></script>
+
+    <!-- Modules -->
+    <script src="app.module.js"></script>
+    <!-- Controllers -->
+    <script src='components/home/home.controller.js'></script>
+    <script src='components/map/tweetMap.controller.js'></script>
+    <!-- Directives -->
+    <!-- Services -->
+    <script src='services/twitter.service.js'></script>
+    <script src='services/underscore.service.js'></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/gossiptweet.css" />
+
+</head>
+
+<body>
+    <div ng-app="gossiptweet" ng-include="'components/home/homeView.html'"></div>
+</body>
+
+</html>
