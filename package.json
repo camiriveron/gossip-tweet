@@ -1,6 +1,6 @@
 {
     "name": "gossip-tweet",
-    "main": "server.js",
+    "main": "index.js",
     "dependencies": {
         "bower": "1.4.1",
         "express": "~4.5.1",
