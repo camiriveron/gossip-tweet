@@ -7,17 +7,6 @@ var env = process.env.NODE_ENV || 'development';
 
 // Configuration *******************************************************
 
-var forceSsl = function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-        return res.redirect(['https://', req.get('Host'), req.url].join(''));
-    }
-    return next();
-};
-
-if (env === 'production') {
-    app.use(forceSsl);
-}
-
 // Set port
 var port = process.env.PORT || 8080;
 
