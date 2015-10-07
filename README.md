@@ -1,4 +1,4 @@
-# Gossip Tweet
+# GossipTweet
 
 https://gossip-tweet.herokuapp.com/
 
