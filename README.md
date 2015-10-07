@@ -2,5 +2,5 @@
 
 https://gossip-tweet.herokuapp.com/
 
-#WHAT'S PEOPLE TWEETING ABOUT?
+#What's people tweeting about?
 Find out the trending topics in your area!
