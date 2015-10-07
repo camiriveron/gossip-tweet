@@ -1,0 +1,221 @@
+.sidemap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 61.803%;
+    height: 100vh;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 200;
+}
+
+.about {
+    width: 38.196%;
+    height: auto;
+    background-color: #3591B0;
+    color: #fff;
+}
+
+.header {
+    width: 38.196%;
+    height: 100vh;
+    display: block;
+    background-image: url('../img/phone1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /*background-attachment: scroll;*/
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: left;
+    color: #262626;
+}
+
+.header .intro-text .intro-lead-in {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.header .intro-text .intro-heading {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 25px;
+    color: #3591B0;
+}
+
+.desc-heading {
+    color: #fff;
+    font-size: 24px;
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 25px;
+    line-height: 37px;
+    margin-bottom: 30px;
+}
+
+@media (min-width:768px) {
+    .header .intro-text {
+        padding-top: 10%;
+        padding-bottom: 200px;
+        padding-left: 5%;
+    }
+    .header .intro-text .intro-lead-in {
+        font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: italic;
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 25px
+    }
+    .header .intro-text .intro-heading {
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 75px;
+        line-height: 75px;
+        margin-bottom: 50px
+    }
+}
+
+a.gossiptweet__hashtagList__link {
+    color: #fff;
+}
+
+a.gossiptweet__hashtagList__link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.gossiptweet__hashtagList__link:focus {
+    text-decoration: none;
+}
+
+a.gossiptweet__hashtagList__link--selected {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.gossiptweet__hashtagList__headline {
+    font-size: 30px;
+    margin-top: 28px;
+}
+
+.searchHashtagArea {
+    position: relative;
+    margin-top: 20%;
+}
+
+.tweetsArea {
+    width: 38.196%;
+    height: 38.196vh;
+    background-color: red;
+}
+
+.angular-google-map-container {
+    height: 100vh;
+    position: relative;
+}
+
+.mapShadow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+    width: 10px;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(110, 110, 110, 0.8), rgba(0, 0, 0, 0));
+}
+
+.tweetWindow {
+    color: black;
+    max-width: 400px;
+}
+
+.gossiptweet__row {
+    margin: 0px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.gossiptweet__tweetImage {
+    text-align: left;
+    float: left;
+    margin-left: 15px;
+}
+
+.gossiptweet__userInfo__userName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gossiptweet__userInfo {
+    margin-left: 10px;
+    padding-left: 0px;
+}
+
+.gossiptweet__date {
+    font-size: 10px;
+}
+
+.gossiptweet__hashtagList__item {
+    color: #FFF;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 2px 0px 2px 0px;
+}
+
+.gossiptweet__hashtagList {
+    margin-top: 30px;
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 100%!important;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover, .btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+}
+
+.btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
