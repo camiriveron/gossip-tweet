@@ -3,7 +3,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var env = process.env.NODE_ENV || 'development';
+var fs = require('fs');
+var https = require('https');
+var http = require('http');
 
 // Configuration *******************************************************
 
@@ -36,7 +38,18 @@ require('./app/routes')(app); // configure routes
 
 // start app *******************************************************
 // startup our app at http://localhost:8080
-app.listen(port);
+//app.listen(port);
+
+app.get('/', function (req, res) {
+    res.send("hello");
+});
+
+http.createServer(app).listen(port);
+
+https.createServer({
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+}, app).listen(55555);
 
 // shoutout to the user
 console.log('Gossip about the tweets near you on port ' + port);
