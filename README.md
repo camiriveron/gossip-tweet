@@ -10,7 +10,7 @@ Find out the trending topics in your area!
 GossipTweet uses a number of open source projects to work properly:
 
 * [AngularJS](https://angularjs.org/) - HTML enhanced for web apps!
-* [Bootstrap](http://getbootstrap.com/) - great UI boilerplate for modern web apps
+* [Bootstrap](http://getbootstrap.com/) - for some of the layout
 * [Angular Google Maps](http://angular-ui.github.io/angular-google-maps) - set of directives written to integrate Google Maps in an AngularJS app.
 * [UnderscoreJS](http://underscorejs.org/) -  provides useful functional programming helpers
 * [node.js](https://nodejs.org/en/) - evented I/O for the backend
