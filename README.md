@@ -5,7 +5,7 @@ https://gossip-tweet.herokuapp.com/
 #What's people tweeting about?
 Find out the trending topics in your area!
 
-Tech
+#Tech
 
 GossipTweet uses a number of open source projects to work properly:
 
