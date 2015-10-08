@@ -3,10 +3,11 @@
 
     angular.module('gossiptweet')
         .controller('HomeController', ['$scope', '$window', '$document', 'searchTweetsByLocation', 'geolocation',
-            'underscore', HomeController
+            'underscore', '$timeout', HomeController
         ]);
 
-    function HomeController($scope, $window, $document, searchTweetsByLocation, geolocation, underscore) {
+    function HomeController($scope, $window, $document, searchTweetsByLocation,
+        geolocation, underscore, $timeout) {
         /* jshint validthis: true */
         var hc = this;
         //Functions
@@ -20,14 +21,24 @@
         };
 
         geolocation.getLocation().then(hc.locationReady);
+        //Search tweets by default
+        var promise = $timeout(function () {
+            searchTweets();
+        }, 5000);
 
         /*********** Functions **************************/
 
         function locationReady(data) {
+            //cancel timeout
+            $timeout.cancel(promise);
             //Update values in scope
             hc.coords.lat = data.coords.latitude;
             hc.coords.long = data.coords.longitude;
             //Get tweets near the area
+            searchTweets();
+        }
+
+        function searchTweets() {
             searchTweetsByLocation.query({
                 lat: hc.coords.lat,
                 long: hc.coords.long,

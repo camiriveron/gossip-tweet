@@ -74,11 +74,11 @@
         });
 
         $scope.$on('hashtagSelected', function (event, args) {
-            var hashtag = args.hashtag.text;
+            var hashtag = args.hashtag;
             underscore.each(mc.map.tweetsMarkers, function (marker) {
                 underscore.each(marker.hashtags, function (ht) {
-                    if (hashtag == ht.text) {
-                        marker.show = !marker.show;
+                    if (hashtag.text == ht.text) {
+                        marker.show = hashtag.selected;
                     }
                 });
             });
@@ -102,18 +102,28 @@
             });
 
             //Show url as links to twitter's users
-            text = text.replace(mc.twitterUserRegex, '$1<a href="http://twitter.com/$2" target="_blank">@$2</a> ');
+            text = text.replace(mc.twitterUserRegex, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a> ');
 
             //Show url as links to twitter's hashtags
             text = text.replace(mc.twitterHashtagRegex, '$1<a href="https://twitter.com/hashtag/$2?src=hash" target="_blank">#$2</a>$3');
 
+            //change call to HTTPS
+            marker.profile_image = marker.profile_image.replace("http", "https");
+
             marker.text = text;
             marker.date = date;
             marker.show = false;
+
             //Function to show info windows
             marker.onClickMarker = function () {
                 marker.show = !marker.show;
-            }
+                for (var i = 0; i < mc.map.tweetsMarkers.length; i++) {
+                    var othermarker = mc.map.tweetsMarkers[i];
+                    if (othermarker.id != marker.id) {
+                        othermarker.show = false;
+                    }
+                }
+            };
         }
 
     }

@@ -4,7 +4,8 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Let's gossip!</div>
                 <div class="intro-heading">What's people tweeting about?</div>
-                <div class="desc-heading">Find out the trending topics in your area!</div>
+                <!-- <div class="desc-heading">Find out the trending topics in your area!</div> -->
+                <span class="col-lg-10 col-lg-offset-1 gossiptweet__hashtagList__headline">Here you can gossip about what people is talking about and where!</span>
                 <a href="#hashtags" class="btn btn-circle page-scroll pulse animated infinite">
                     <i class="fa fa-angle-double-down animated"></i>
                 </a>
@@ -12,8 +13,7 @@
         </div>
         <div id="hashtags" class="about content-section text-center">
             <div class="row">
-                <div class="col-lg-12">
-                    <span class="col-lg-8 col-lg-offset-2 gossiptweet__hashtagList__headline">Here you can gossip about what people is talking about and where!</span>
+                <div class="col-lg-12 gossiptweet__hashtagList__container">
                     <div class="col-lg-6 col-lg-offset-3">
                         <ul class="list-group gossiptweet__hashtagList">
                             <li ng-repeat="hashtag in hc.hashtags" class="list-group-item gossiptweet__hashtagList__item">

@@ -20,9 +20,9 @@
 
 .header {
     width: 38.196%;
-    height: 100vh;
+    height: 80vh;
     display: block;
-    background-image: url('../img/phone1.jpg');
+    background-image: url('../img/phone.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -43,16 +43,18 @@
     line-height: 22px;
     margin-bottom: 25px;
     color: #fff;
+    padding-left: 10px;
 }
 
 .header .intro-text .intro-heading {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 30px;
     line-height: 50px;
     margin-bottom: 25px;
     color: #3591B0;
+    padding-left: 10px;
 }
 
 .desc-heading {
@@ -62,14 +64,39 @@
     font-style: italic;
     font-size: 25px;
     line-height: 37px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 @media (min-width:768px) {
+    .gossiptweet__hashtagList__headline {
+        font-size: 25px;
+    }
     .header .intro-text {
-        padding-top: 10%;
+        padding-top: 5%;
         padding-bottom: 200px;
         padding-left: 5%;
+        text-align: center;
+    }
+    .header .intro-text .intro-lead-in {
+        font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: italic;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 25px
+    }
+    .header .intro-text .intro-heading {
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 75px;
+        margin-bottom: 30px
+    }
+}
+
+@media (min-width:1600px) {
+    .header .intro-text {
+        padding-top: 10%;
     }
     .header .intro-text .intro-lead-in {
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -84,8 +111,16 @@
         font-weight: 700;
         font-size: 75px;
         line-height: 75px;
-        margin-bottom: 50px
+        margin-bottom: 30px
     }
+    .gossiptweet__hashtagList__headline {
+        font-size: 30px;
+    }
+}
+
+.gossiptweet__hashtagList__container {
+    padding-top: 25px;
+    min-height: 20vh;
 }
 
 a.gossiptweet__hashtagList__link {
@@ -108,8 +143,10 @@ a.gossiptweet__hashtagList__link--selected {
 }
 
 .gossiptweet__hashtagList__headline {
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 28px;
+    display: inline-block;
+    color: #fff;
 }
 
 .searchHashtagArea {
@@ -175,6 +212,11 @@ a.gossiptweet__hashtagList__link--selected {
     border: none;
     font-size: 20px;
     padding: 2px 0px 2px 0px;
+    line-height: 25px;
+}
+
+.gossiptweet__hashtagList__item:hover {
+    font-size: 22px;
 }
 
 .gossiptweet__hashtagList {
