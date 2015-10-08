@@ -10,6 +10,7 @@ Find out the trending topics in your area!
 GossipTweet uses a number of open source projects to work properly:
 
 * [AngularJS](https://angularjs.org/) - HTML enhanced for web apps
+* [Twitter Rest API](https://dev.twitter.com/rest/public) - used to obtain tweets near area
 * [Angular Google Maps](http://angular-ui.github.io/angular-google-maps) - set of directives written to integrate Google Maps in an AngularJS app
 * [UnderscoreJS](http://underscorejs.org/) -  provides useful functional programming helpers, Map-Reduce algorithm was implemented to obtain most used hashtags
 * [Express](http://expressjs.com/) - fast node.js network app framework, used to create server and define RESTful endpoints 
