@@ -3,15 +3,15 @@
     "version": "1.0.0",
     "dependencies": {
         "lodash": "2.4.2",
-        "bootstrap": "latest",
-        "font-awesome": "latest",
-        "animate.css": "latest",
+        "bootstrap": "3.3.5",
+        "font-awesome": "4.4.0",
+        "animate.css": "3.4.0",
         "angular": "1.4.7",
-        "angular-route": "latest",
-        "angular-resource": "latest",
+        "angular-route": "1.4.7",
+        "angular-resource": "1.4.7",
         "angular-google-maps": "2.0.20",
-        "angularjs-geolocation": "latest",
-        "underscore": "latest"
+        "angularjs-geolocation": "0.1.1",
+        "underscore": "1.8.3"
     },
     "resolutions": {
         "angular": "1.4.7"
