@@ -1,11 +1,12 @@
 // Modules   *******************************************************
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var fs = require('fs');
-var https = require('https');
-var http = require('http');
+var express = require('express'),
+    app = express(),
+    cors = require('cors'),
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    fs = require('fs'),
+    https = require('https'),
+    http = require('http');
 
 // Configuration *******************************************************
 
@@ -26,6 +27,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(cors());
+
 // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 //app.use(methodOverride('X-HTTP-Method-Override'));
 
@@ -37,13 +40,6 @@ require('./app/twitter')(app, express); // twitter API
 require('./app/routes')(app); // configure routes
 
 // start app *******************************************************
-// startup our app at http://localhost:8080
-//app.listen(port);
-
-app.get('/', function (req, res) {
-    res.send("hello");
-});
-
 http.createServer(app).listen(port);
 
 https.createServer({
