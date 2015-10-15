@@ -2,13 +2,13 @@ module.exports = function (app, express) {
     //Twitter configuration
     var twitterAPI = require('node-twitter-api');
     var twitter = new twitterAPI({
-        consumerKey: 'FvyoAC4yt93iemRutIaUz5CMH',
-        consumerSecret: 'RvLH3DelwSZX7sNFLQSonDLerfN7NNALZbYAEXgfgRt0ak3fBw',
+        consumerKey: process.env.TWITTER_CONSUMER_KEY,
+        consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
         callback: ''
     });
     var tokens = { //Tokens for accessing the Twitter API
-        accessToken: '249003050-kauc1pUEOZviVhXaUtSdH2Jh4gtMS3z3BqMUGpO5',
-        accessTokenSecret: 'cX1woEQQXPqt641im25IJmhM5saRI5S3sikVLZ2sg3lPb'
+        accessToken: process.env.TWITTER_ACCESS_TOKEN,
+        accessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     };
     //Get an instance of the express Router
     var router = express.Router();
@@ -36,21 +36,23 @@ module.exports = function (app, express) {
         var jsonTweets = JSON.parse(tweets);
         //Create response JSON
         var resJson = [];
-        for (var i = 0; i < jsonTweets.statuses.length; i++) {
-            var tweet = jsonTweets.statuses[i];
-            resJson.push({
-                id: i,
-                text: tweet.text,
-                geo: {
-                    latitude: tweet.coordinates === null ? undefined : tweet.coordinates.coordinates[1],
-                    longitude: tweet.coordinates === null ? undefined : tweet.coordinates.coordinates[0]
-                },
-                user_screen_name: tweet.user.screen_name,
-                user_name: tweet.user.name,
-                profile_image: tweet.user.profile_image_url,
-                created_at: tweet.created_at,
-                hashtags: tweet.entities.hashtags
-            });
+        if (jsonTweets.statuses !== undefined) {
+            for (var i = 0; i < jsonTweets.statuses.length; i++) {
+                var tweet = jsonTweets.statuses[i];
+                resJson.push({
+                    id: i,
+                    text: tweet.text,
+                    geo: {
+                        latitude: tweet.coordinates === null ? undefined : tweet.coordinates.coordinates[1],
+                        longitude: tweet.coordinates === null ? undefined : tweet.coordinates.coordinates[0]
+                    },
+                    user_screen_name: tweet.user.screen_name,
+                    user_name: tweet.user.name,
+                    profile_image: tweet.user.profile_image_url,
+                    created_at: tweet.created_at,
+                    hashtags: tweet.entities.hashtags
+                });
+            }
         }
         return resJson;
     };

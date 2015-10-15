@@ -21,6 +21,7 @@
         };
 
         geolocation.getLocation().then(hc.locationReady);
+
         //Search tweets by default
         var promise = $timeout(function () {
             searchTweets();
