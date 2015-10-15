@@ -1,6 +1,6 @@
 {
     "name": "gossip-tweet",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "dependencies": {
         "lodash": "2.4.2",
         "bootstrap": "3.3.5",
