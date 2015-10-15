@@ -1,17 +1,16 @@
 // Modules   *******************************************************
-var express = require('express'),
-    app = express(),
-    cors = require('cors'),
-    bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
-    fs = require('fs'),
-    https = require('https'),
-    http = require('http');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var fs = require('fs');
+var https = require('https');
+var http = require('http');
 
 // Configuration *******************************************************
 
 // Set port
 var port = process.env.PORT || 8080;
+var sslPort = process.env.SSL_PORT || 55555;
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
@@ -27,11 +26,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(cors());
-
-// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-//app.use(methodOverride('X-HTTP-Method-Override'));
-
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
@@ -40,15 +34,16 @@ require('./app/twitter')(app, express); // twitter API
 require('./app/routes')(app); // configure routes
 
 // start app *******************************************************
+
 http.createServer(app).listen(port);
 
 https.createServer({
     key: fs.readFileSync('key.pem'),
     cert: fs.readFileSync('cert.pem')
-}, app).listen(55555);
+}, app).listen(sslPort);
 
 // shoutout to the user
-console.log('Gossip about the tweets near you on port ' + port);
+console.log('Gossip about the tweets near you on port ' + sslPort);
 
 // expose app
 exports = module.exports = app;
